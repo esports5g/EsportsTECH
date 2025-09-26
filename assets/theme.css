@@ -455,3 +455,154 @@ footer {
   .exec-grid{ grid-template-columns: 1fr; }
   .exec-portrait{ order: -1; aspect-ratio: 16/9; }
 }
+/* ========== Mobile Fix Pack ========== */
+
+/* iOS Safari 禁止自动放大文本，基础排版一致 */
+html{
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+/* 全站图片/视频在小屏不溢出 */
+img, video{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 统一正文行高、字距；避免移动端字太挤或太松 */
+body{
+  line-height: 1.65;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* 顶部导航：小屏允许横向滚动，避免换行挤压布局 */
+@media (max-width: 900px){
+  header nav{
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px !important; /* 柔和间距 */
+  }
+}
+
+/* Hero 区：使用 dvh 解决移动 Chrome 地址栏伸缩导致的 vh 跳动 */
+.hero-full{
+  min-height: 86vh;             /* 兜底 */
+  min-height: 86dvh;            /* 新标准：动态视口 */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  isolation: isolate;
+}
+.hero-full::before{             /* 顶部渐变遮罩，保证标题可读 */
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(2,6,23,.28), rgba(2,6,23,.62) 60%, rgba(2,6,23,.72));
+  z-index:-1;
+}
+
+/* 容器在小屏加侧边安全间距，适配 iPhone 刘海 */
+.container{
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+}
+
+/* 栅格在移动端自动堆叠，减少拥挤 */
+@media (max-width: 900px){
+  .grid.cols-4{ grid-template-columns: 1fr 1fr !important; }
+  .grid.cols-3{ grid-template-columns: 1fr !important; }
+  .grid.cols-2{ grid-template-columns: 1fr !important; }
+}
+
+/* 案例卡片：缩略图按比例显示，避免变形 */
+.cases .thumb{
+  aspect-ratio: 16 / 9;
+  height: auto !important;
+  overflow: hidden;
+}
+.cases .thumb img{
+  width:100%; height:100%; object-fit: cover;
+}
+
+/* 表单：iOS 触控不放大（>=16px），更好的点击区 */
+input, textarea, select{
+  font-size: 16px;           /* 防止 iOS 输入时自动放大 */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+input:focus, textarea:focus, select:focus{
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96,165,250,.25);
+}
+
+/* 表单行在小屏一列堆叠 */
+@media (max-width: 900px){
+  .form-row{ grid-template-columns: 1fr !important; }
+}
+
+/* 地图 iframe 自适应：不溢出、保持比例 */
+.map-wrap{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;           /* 移动端更高一些，可读性好 */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(2,6,23,.06);
+}
+.map-wrap iframe{
+  position:absolute; inset:0; width:100%; height:100%; border:0;
+}
+
+/* 代表挨拶（无头像版）居中更紧凑： */
+.exec-grid.exec-center{
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.exec-grid.exec-center .exec-content{
+  max-width: 820px;
+  text-align: left;
+}
+.exec-grid.exec-center .exec-quote{
+  left: 50%;
+  transform: translateX(-50%);
+  top: -16px;
+}
+.exec-grid.exec-center .exec-sign{
+  justify-content: center;
+  grid-template-columns: 6px auto;
+}
+
+/* 顶部吸顶 header 与刘海安全区 */
+header{
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-top: env(safe-area-inset-top);
+}
+
+/* 小屏标题字号自动缩放，不会挤出屏幕 */
+h1.headline{ font-size: clamp(28px, 8vw, 120px); line-height: 1.1; }
+.section-title{ font-size: clamp(20px, 4.8vw, 34px); }
+
+/* 按钮在小屏更易点到 */
+button.btn, .btn{
+  min-height: 44px;             /* Apple 建议的触控高度 */
+  padding-block: 12px;
+}
+
+/* 防止极小屏（<360px）换行错位 */
+@media (max-width: 360px){
+  .navbar{ padding-inline: 12px !important; }
+  header nav{ gap: 10px !important; }
+}
+
+/* 修复部分安卓 WebView 垂直滚动卡顿 */
+*{ -webkit-tap-highlight-color: rgba(0,0,0,0); }
