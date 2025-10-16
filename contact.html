@@ -1,47 +1,216 @@
-<!doctype html><html lang="ja"><head>
-  <!-- 视口 & 刘海适配 -->
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="format-detection" content="telephone=no">
-<meta name="color-scheme" content="light only">
+<!DOCTYPE html>
 
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>CONTACT — EsportsTECH</title><link rel="stylesheet" href="assets/theme.css"/><script src="assets/theme.js"></script>
+<html lang="ja"><head>
+<!-- 视口 & 刘海适配 -->
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="light only" name="color-scheme"/>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>CONTACT — EsportsTECH</title><link href="assets/theme.css" rel="stylesheet"/><script src="assets/theme.js"></script>
+  
+  <!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0a2342">
 </head><body data-page="contact">
 <header>
-  <div class="navbar container">
-    <div class="brand"><a href="index.html"><img class="logo" src="assets/img/logo.png" alt="EsportsTECH"/><span>EsportsTECH</span></a></div>
-    <nav>
-      <a href="index.html" data-page="home">ホーム</a>
-      <a href="about.html" data-page="about">会社概要</a>
-      <a href="service.html" data-page="service">サービスを見る</a>
-      <a href="works.html" data-page="works">実績ギャラリー</a>
-      <div class="dropdown">
-        <a href="contact.html" data-page="contact">お問い合わせ</a>
-        <div class="dropdown-menu">
-          <a href="inquiry.html" data-page="inquiry">お問い合わせフォーム</a>
-          <a href="recruit.html" data-page="recruit">採用情報</a>
-        </div>
-      </div>
-    </nav>
-  </div>
+<div class="navbar container">
+<div class="brand"><a href="index.html"><img alt="EsportsTECH ロゴ" class="logo" decoding="async" loading="eager" src="assets/logo_hd.png"/></a></div>
+<nav>
+<a data-page="home" href="index.html">ホーム</a>
+<a data-page="about" href="about.html">会社概要</a>
+<a data-page="service" href="service.html">サービスを見る</a>
+<a data-page="works" href="works.html">実績ギャラリー</a>
+<div class="dropdown">
+<a data-page="contact" href="contact.html">お問い合わせ</a>
+<div class="dropdown-menu">
+<a data-page="inquiry" href="inquiry.html">お問い合わせフォーム</a>
+<a data-page="recruit" href="recruit.html">採用情報</a>
+</div>
+</div>
+</nav>
+</div>
 </header>
-
-<section class="page-hero hero-full" style="background-image:url('assets/img/hero.jpg'); min-height:46vh;">
-  <div class="headline-wrap"><div><h1 class="headline">お問い合わせ</h1></div></div>
-</section>
-
+<section class="page-hero hero-full" style="background-image:url('assets/hero_global_fullres.png')">
+<div class="headline-wrap"><div>
+<h1 class="headline">お問い合わせ</h1></div></div>
 </section>
 <section class="section"><div class="container">
-  <div class="card">
-    <h3>お問い合わせ</h3>
-    <form onsubmit="event.preventDefault(); alert('送信テスト：静的サイトのため実送信は未接続です');">
-      <div class="form-row"><div><label>姓*</label><input required/></div><div><label>名*</label><input required/></div></div>
-      <div class="form-row" style="margin-top:10px"><div><label>Eメール*</label><input type="email" required/></div><div><label>電話番号</label><input/></div></div>
-      <div style="margin-top:10px"><label>件名</label><input/></div>
-      <div style="margin-top:10px"><label>メッセージ</label><textarea rows="6"></textarea></div>
-      <div style="margin-top:14px"><button class="btn">送信する</button></div>
-    </form>
-  </div>
+<div class="card">
+<div class="contact-intro">
+  <p>導入のご相談、デモ体験、技術提携、取材依頼などは<br/>下記フォームまたはメールにて承っております。</p>
+  <p>📧 <a href="mailto:info@esportstech.jp">info@esportstech.jp</a><br/>
+  🌐 <a href="https://esportstech.co.jp" target="_blank" rel="noopener">https://esportstech.co.jp</a></p>
 </div>
-</div></section>
-<footer>© 2025 EsportsTECH</footer></body></html>
+<h3>お問い合わせ</h3>
+<form onsubmit="event.preventDefault(); alert('送信テスト：静的サイトのため実送信は未接続です');" id="contactForm">
+  <div class="form-grid">
+    <div class="field">
+      <label>お名前 <span class="req">（必須）</span></label>
+      <input name="name" required placeholder="山田 太郎" />
+    </div>
+    <div class="field">
+      <label>ふりがな <span class="req">（必須）</span></label>
+      <input name="furigana" required placeholder="やまだ たろう" />
+    </div>
+
+    <div class="field">
+      <label>会社・学校等 <span class="req">（必須）</span></label>
+      <input name="org" required placeholder="ＥＳＰＯＲＴＳ ＴＥＣＨ など" />
+    </div>
+    <div class="field">
+      <label>部署・学部・学科等</label>
+      <input name="dept" placeholder="部署や学部名があれば" />
+    </div>
+
+    <div class="field sm">
+      <label>郵便番号（半角数字）</label>
+      <input name="zip" inputmode="numeric" pattern="[0-9-]*" placeholder="170-0014" />
+    </div>
+    <div class="field">
+      <label>ご住所 <span class="req">（必須）</span></label>
+      <input name="address" required placeholder="東京都豊島区池袋1-7-18 など" />
+    </div>
+
+    <div class="field full">
+      <label>建物・ビル・マンション名</label>
+      <input name="building" placeholder="建物名・部屋番号 など" />
+    </div>
+
+    <div class="field sm">
+      <label>電話番号</label>
+      <input name="tel" inputmode="tel" placeholder="090-1234-5678" />
+    </div>
+    <div class="field">
+      <label>メールアドレス <span class="req">（必須）</span></label>
+      <input type="email" name="email" required placeholder="info@example.com" />
+    </div>
+    <div class="field">
+      <label>メールアドレス確認 <span class="req">（必須）</span></label>
+      <input type="email" name="email_confirm" required placeholder="もう一度入力してください" />
+    </div>
+
+    <div class="field full">
+      <label>ご質問・お問い合わせ <span class="req">（必須）</span></label>
+      <textarea name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+    </div>
+
+    <div class="field full agree">
+      <label class="ck">
+        <input type="checkbox" required name="agree" />
+        送信にあたり、<a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意します。
+        <span class="req">（必須）</span>
+      </label>
+    </div>
+    <div class="actions">
+      <button class="btn" type="submit">送信する</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</section>
+<footer>© 2025 EsportsTECH</footer>
+<script>
+(function(){
+  const zipInput = document.querySelector('input[name="zip"]');
+  const addressInput = document.querySelector('input[name="address"]');
+  if(!zipInput || !addressInput) return;
+
+  const helper = document.createElement('div');
+  helper.className = 'zip-helper';
+  helper.style.fontSize = '12px';
+  helper.style.marginTop = '4px';
+  helper.style.color = 'var(--muted, #64748b)';
+  zipInput.parentElement.appendChild(helper);
+
+  function normalizeZip(v){ return (v||'').replace(/[^0-9]/g,'').slice(0,7); }
+  let latestQuery = 0;
+
+  async function fetchAddress(zip){
+    try{
+      latestQuery++;
+      const token = latestQuery;
+      helper.textContent = "住所検索中…";
+      const res = await fetch('https://zipcloud.ibsnet.co.jp/api/search?zipcode='+encodeURIComponent(zip));
+      const data = await res.json();
+      if(token !== latestQuery) return;
+      if(data && data.results && data.results[0]){
+        const r = data.results[0];
+        const value = (r.address1||"") + (r.address2||"") + (r.address3||"");
+        addressInput.value = value;
+        helper.textContent = "住所を自動入力しました。";
+      }else{
+        helper.textContent = "該当する住所が見つかりませんでした。";
+      }
+    }catch(e){
+      helper.textContent = "住所検索に失敗しました。再度お試しください。";
+    }
+  }
+
+  zipInput.addEventListener('input', ()=>{
+    const n = normalizeZip(zipInput.value);
+    zipInput.value = n;
+    if(n.length === 7){ fetchAddress(n); } else { helper.textContent = ""; }
+  });
+
+  zipInput.addEventListener('blur', ()=>{
+    const n = normalizeZip(zipInput.value);
+    if(n.length === 7){ zipInput.value = n.slice(0,3) + "-" + n.slice(3); }
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  const form = document.getElementById('contactForm');
+  if(!form) return;
+
+  function val(name){ const el=form.querySelector(`[name="${name}"]`); return el?el.value.trim():""; }
+  function esc(s){ return encodeURIComponent(s || ""); }
+
+  form.addEventListener('submit', function(e){
+    // basic validations
+    const email = val('email');
+    const email2 = val('email_confirm');
+    const agree = form.querySelector('input[name="agree"]');
+    if(email && email2 && email !== email2){
+      e.preventDefault();
+      alert("メールアドレスが一致しません。ご確認ください。");
+      return;
+    }
+    if(agree && !agree.checked){
+      e.preventDefault();
+      alert("プライバシーポリシーに同意してください。");
+      return;
+    }
+
+    // Build body
+    const lines = [
+      "■ お問い合わせ内容",
+      val('message'),
+      "",
+      "■ お名前: " + val('name'),
+      "■ ふりがな: " + val('furigana'),
+      "■ 会社・学校等: " + val('org'),
+      "■ 部署・学部・学科等: " + val('dept'),
+      "■ 郵便番号: " + val('zip'),
+      "■ 住所: " + val('address'),
+      "■ 建物・ビル・マンション名: " + val('building'),
+      "■ 電話番号: " + val('tel'),
+      "■ メール: " + email
+    ].join("\n");
+
+    const subject = "【サイト】お問い合わせ";
+    const mailto = "mailto:info@esportstech.co.jp?subject=" + esc(subject) + "&body=" + esc(lines);
+    // Open default mail client
+    e.preventDefault();
+    window.location.href = mailto;
+  });
+})();
+</script>
+
+</body></html>

@@ -1,137 +1,166 @@
-<!doctype html><html lang="ja"><head>
-  <!-- 视口 & 刘海适配 -->
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="format-detection" content="telephone=no">
-<meta name="color-scheme" content="light only">
-
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>SERVICE — EsportsTECH</title><link rel="stylesheet" href="assets/theme.css"/><script src="assets/theme.js"></script>
-</head><body data-page="service">
-<header>
-  <div class="navbar container">
-    <div class="brand"><a href="index.html"><img class="logo" src="assets/img/logo.png" alt="EsportsTECH"/><span>EsportsTECH</span></a></div>
-    <nav>
-      <a href="index.html" data-page="home">ホーム</a>
-      <a href="about.html" data-page="about">会社概要</a>
-      <a href="service.html" data-page="service">サービスを見る</a>
-      <a href="works.html" data-page="works">実績ギャラリー</a>
-      <div class="dropdown">
-        <a href="contact.html" data-page="contact">お問い合わせ</a>
-        <div class="dropdown-menu">
-          <a href="inquiry.html" data-page="inquiry">お問い合わせフォーム</a>
-          <a href="recruit.html" data-page="recruit">採用情報</a>
-        </div>
-      </div>
-    </nav>
-  </div>
-</header>
-  <section class="page-hero hero-full" style="background-image:url('assets/img/hero.jpg'); tyle="min-height:46vh;background-image:url('assets/img/hero.jpg')">
-    <div class="headline-wrap container" style="grid-template-columns:1fr;">
-      <h1 class="headline esports" style="font-size:clamp(32px,6vw,64px); margin:8px 0;">摇钱树網吧管理システム</h1>
-      <div class="hero-copy">
-        <p class="catch">eスポーツカフェ／ネットカフェ運営を、よりスマートに。</p>
-        <p class="sub">「会員登録・チャージ・予約・精算」を一元管理。日本語完全対応、導入から保守までフルサポート。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 特長（箇条書き） -->
-<section class="section">
-  <div class="container">
-    <div class="card emphasis">
-      <h2 class="section-title" style="margin-bottom:8px">摇钱树網吧管理システムとは</h2>
-
-      <ul class="meta-list">
-        <li>中国市場で広く使われている「摇钱树網吧管理システム」</li>
-        <li>日本地区総代理店（正規ライセンス）</li>
-        <li>20年以上の自社利用実績</li>
-        <li>完全日本語版を開発済み</li>
-        <li>導入から保守までトータルサポート</li>
-      </ul>
-
-      <p class="meta">
-        弊社は、中国市場で広く導入されている「摇钱树網吧管理システム」の<strong>正規代理店</strong>です。
-      </p>
-
-      <p class="meta">
-        会員登録から利用状況の一元管理、料金精算、各種決済までを包括的にサポート。eスポーツカフェやネットカフェ運営に最適化された機能により、
-        顧客管理の効率化・スタッフの業務負担軽減を実現します。
-      </p>
-
-      <p class="meta">
-        ネットカフェの規模や形態を問わず導入でき、チェーン展開にも対応したネットカフェ向け計費・管理ソフトです。座席・会員・料金・売上の一元管理により、
-        運営効率化と不正防止、締め作業の標準化を実現します。
-      </p>
-
-      <p class="meta">
-        本ソフトは20年以上の開発実績に裏打ちされた安定性と拡張性を備え、要望に応じた機能カスタマイズや
-        継続的なバージョンアップに対応します。導入から運用、保守までを通じて、専門スタッフが迅速かつ丁寧にサポートします。
-      </p>
-
-      <p class="meta">
-        現在、製品はネットカフェ・学校のPCルーム・ホテル等、多様なシーンで広く採用されています。
-        さらに英語・フランス語・日本語・トルコ語・スペイン語をはじめとする多数の言語版を提供しており、海外展開にも最適です。
-        特にマレーシアのB3ネットカフェ管理システムとしては、現地の業界公式ソフトに指定された実績があります。
-      </p>
-    </div>
-  </div>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>会員管理システム・維 | ESports TECH</title>
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+.section{max-width:1200px;margin:0 auto;padding:48px 20px;}
+.section h2{font-size:22px;margin:6px 0 18px;letter-spacing:.02em}
+.section p{line-height:1.9;letter-spacing:.02em;color:#334155;margin:0 0 12px}
+.kv{position:relative;overflow:hidden}
+.kv .wrap{max-width:1200px;margin:0 auto;padding:80px 20px 64px;display:flex;flex-direction:column;gap:8px}
+.kv h1{font-size:40px;line-height:1.2;color:#fff;font-weight:800;letter-spacing:.02em;margin:0}
+.kv p.lead{color:#dbeafe;max-width:720px}
+.kv::before{content:"";position:absolute;inset:0;background:url('assets/hero/earth.jpg') center/cover no-repeat;filter:brightness(.75)}
+.kv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,23,.0),rgba(2,6,23,.35))}
+.kv>*{position:relative;z-index:1}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+@media (max-width:960px){.grid-2{grid-template-columns:1fr} .kv .wrap{padding:64px 20px 48px} .kv h1{font-size:32px}}
+.callout{background:#f8fafc;border-radius:16px;padding:18px 20px;border:1px solid #e2e8f0}
+.list-check{padding-left:1.2em}
+.list-check li{margin:.35rem 0}
+.compare{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+@media (max-width:960px){.compare{grid-template-columns:1fr}}
+.badge{display:inline-block;background:#0b5cff1a;color:#0b5cff;border:1px solid #0b5cff33;padding:2px 10px;border-radius:999px;font-size:12px;margin-left:6px}
+.table{width:100%;border-collapse:separate;border-spacing:0 8px}
+.table th,.table td{background:#fff;border:1px solid #e2e8f0;padding:10px 12px}
+.table th{background:#f1f5f9;font-weight:700}
+.table tr>*:first-child{border-radius:10px 0 0 10px}
+.table tr>*:last-child{border-radius:0 10px 10px 0}
+.pos{color:#64748b}
+.wei{color:#0b5cff;font-weight:700}
+.radar-card{background:#ffffff;border-radius:16px;border:1px solid #e2e8f0;padding:16px}
+.radar-legend{display:flex;gap:14px;margin-top:10px;align-items:center}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:13px}
+.legend-dot{width:10px;height:10px;border-radius:2px}
+.dot-pos{background:#94a3b8}
+.dot-wei{background:#0b5cff}
+.small{color:#475569;font-size:13px}
+</style>
+  
+  <!-- Icons -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0a2342">
+</head>
+<body>
+<!-- === HERO统一：仅标题 === -->
+<section class="page-hero hero-full" style="background-image:url('assets/hero_global_fullres.png')">
+<div class="headline-wrap"><div><h1 class="headline">会員管理システム・維</h1></div></div>
 </section>
 
-  <!-- 世界実績（原図のみ表示） -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">実績（世界）</h2>
-    <div class="card" style="padding:0;">
-      <img src="assets/img/World map.jpg" alt="世界展開の導入実績" style="width:100%;height:auto;display:block;border-radius:16px;" />
-    </div>
-  </div>
-</section>
-
-
-  <!-- できること（3カラム） -->
+<main>
   <section class="section">
-    <div class="container">
-      <h2 class="section-title">主な強み</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <h3>会員管理・チャージ</h3>
-          <p style="color:var(--muted)">ICカードのように直感的。チャージ／予約／残高確認／ポイント管理をワンストップ。</p>
-        </div>
-        <div class="card">
-          <h3>精算・自動計算</h3>
-          <p style="color:var(--muted)">席利用と商品販売を統合し、料金を自動計算。締め作業の手間を大幅に削減。</p>
-        </div>
-        <div class="card">
-          <h3>データ活用</h3>
-          <p style="color:var(--muted)">来店履歴・売上・混雑状況を可視化。キャンペーン施策や席回転率の改善に活用。</p>
+    <h2>■ システムの特徴</h2>
+    <div class="grid-2">
+      <div class="callout">
+        <h3>1. 前払いチャージ制による効率的な運営</h3>
+        <ul class="list-check">
+          <li>利用開始前のチャージで受付・精算を大幅に簡素化。</li>
+          <li>混雑時もスムーズに入退店でき、スタッフ負担を軽減。</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h3>2. スマホによる会員登録・本人確認</h3>
+        <ul class="list-check">
+          <li>スマホから事前登録。紙面記入・手入力は不要。</li>
+          <li>本人確認機能で条例に沿った年齢管理に対応。</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h3>3. 座席・ルーム予約機能</h3>
+        <ul class="list-check">
+          <li>空席状況をリアルタイム反映。スマホから予約・延長が可能。</li>
+          <li>利用状況は自動データ化しピークタイム分析に活用。</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h3>4. モバイル決済・チャージ対応</h3>
+        <p class="small">PayPay / クレカ / LINE Pay など主要キャッシュレスに標準対応。現金取扱いを減らし金銭管理を省力化。</p>
+      </div>
+      <div class="callout">
+        <h3>5. 未成年者保護機能</h3>
+        <p class="small">年齢情報に基づき、利用時間や深夜帯入店を自動制限。行政確認にも迅速対応。</p>
+      </div>
+      <div class="callout">
+        <h3>6. クラウドバックアップ・データ同期</h3>
+        <p class="small">売上・会員データをクラウドへ安全保存。店舗PC故障時も迅速復旧。</p>
+      </div>
+      <div class="callout">
+        <h3>7. 多店舗連携・チェーン展開対応</h3>
+        <p class="small">複数店舗でもデータを一元管理。売上比較・会員統計・キャンペーン共有。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>■ 運営者・顧客双方にとっての価値</h2>
+    <p><strong>運営者:</strong> 業務効率化・人件費削減・トラブル防止 <span class="badge">オペ省力化</span></p>
+    <p><strong>顧客:</strong> 快適・簡単・安心 <span class="badge">UX向上</span></p>
+    <p>この両立を実現することこそ、ＥＳＰＯＲＴＳ ＴＥＣＨが目指す運営スタイルです。「維」は単なるシステムではなく、店舗運営の仕組みを支える<strong>経営プラットフォーム</strong>として設計されています。</p>
+  </section>
+
+  <section class="section">
+    <h2>■ 日本市場における課題とＥＳＰＯＲＴＳ ＴＥＣＨの優位性</h2>
+    <p>人件費上昇・教育負担・交代時の精算作業・法令対応の複雑化などの課題に対し、会員管理システム・維は<strong>自動化・省人化・可視化</strong>で対応。登録・精算・年齢確認・予約・分析をクラウドで一元化し、現場負担軽減と顧客体験向上を同時に実現します。</p>
+    <div class="compare">
+      <div>
+        <h3 class="small">比較（ビジュアル）</h3>
+        <table class="table">
+          <tr><th>項目</th><th class="pos">一般的なPOS型</th><th class="wei">会員管理システム・維</th></tr>
+          <tr><td>精算方式</td><td>後払い・手動精算</td><td>前払いチャージ制・自動精算</td></tr>
+          <tr><td>会員登録</td><td>店頭紙面・スタッフ入力</td><td>スマホ事前登録・自動認証</td></tr>
+          <tr><td>利用延長</td><td>スタッフに申告</td><td>スマホからワンタップ延長</td></tr>
+          <tr><td>支払方法</td><td>現金・一部QR</td><td>キャッシュレス完全対応</td></tr>
+          <tr><td>年齢管理</td><td>手動チェック</td><td>年齢・時間制限自動化</td></tr>
+          <tr><td>管理対象</td><td>席単位・POS</td><td>アカウント単位・データ連携</td></tr>
+          <tr><td>データ分析</td><td>帳票出力のみ</td><td>クラウド統計・行動分析</td></tr>
+        </table>
+      </div>
+      <div class="radar-card">
+        <h3 class="small">可視化チャート</h3>
+        <svg viewBox="0 0 120 120" width="100%" height="220" aria-hidden="true">
+          <defs>
+            <linearGradient id="gWei" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0b5cff" stop-opacity=".65"/>
+              <stop offset="100%" stop-color="#0b5cff" stop-opacity=".25"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(60,60)">
+            <line x1="0" y1="0" x2="0.0" y2="-60.0" stroke="#cbd5e1"/><line x1="0" y1="0" x2="46.91" y2="-37.41" stroke="#cbd5e1"/><line x1="0" y1="0" x2="58.5" y2="13.35" stroke="#cbd5e1"/><line x1="0" y1="0" x2="26.03" y2="54.06" stroke="#cbd5e1"/><line x1="0" y1="0" x2="-26.03" y2="54.06" stroke="#cbd5e1"/><line x1="0" y1="0" x2="-58.5" y2="13.35" stroke="#cbd5e1"/><line x1="0" y1="0" x2="-46.91" y2="-37.41" stroke="#cbd5e1"/>
+            <circle r="15" fill="none" stroke="#e2e8f0"/>
+            <circle r="30" fill="none" stroke="#e2e8f0"/>
+            <circle r="45" fill="none" stroke="#e2e8f0"/>
+            <circle r="60" fill="none" stroke="#e2e8f0"/>
+            <polygon points="0.0,-24.0 18.76,-14.96 23.4,5.34 10.41,21.62 -10.41,21.62 -23.4,5.34 -18.76,-14.96" fill="#94a3b8" fill-opacity=".35" stroke="#94a3b8"/>
+            <polygon points="0.0,-60.0 46.91,-37.41 58.5,13.35 26.03,54.06 -26.03,54.06 -58.5,13.35 -46.91,-37.41" fill="url(#gWei)" stroke="#0b5cff"/>
+          </g>
+        </svg>
+        <div class="radar-legend">
+          <div class="legend-item"><span class="legend-dot dot-pos"></span>一般的なPOS型</div>
+          <div class="legend-item"><span class="legend-dot dot-wei"></span>会員管理システム・維</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 導入フロー -->
   <section class="section">
-    <div class="container">
-      <h2 class="section-title">導入フロー</h2>
-      <div class="grid cols-4">
-        <div class="card"><h3>01 相談・要件整理</h3><p style="color:var(--muted)">店舗規模／席数／既存設備を確認し、最適構成をご提案。</p></div>
-        <div class="card"><h3>02 設計・ライセンス</h3><p style="color:var(--muted)">ネットワーク／サーバー／クライアント設計、正規ライセンス手配。</p></div>
-        <div class="card"><h3>03 導入・テスト</h3><p style="color:var(--muted)">現地設定・動作確認・スタッフトレーニングを実施。</p></div>
-        <div class="card"><h3>04 運用・保守</h3><p style="color:var(--muted)">オンライン技術支援／リモート保守で店舗を止めない運用。</p></div>
-      </div>
-    </div>
+    <h2>■ 導入効果</h2>
+    <ul class="list-check">
+      <li><strong>業務効率化：</strong> 受付・精算・登録を自動化し、スタッフ作業量を<strong>30〜50％削減</strong>。</li>
+      <li><strong>顧客満足度の向上：</strong> スマホ登録・予約で利便性向上、リピート率改善。</li>
+      <li><strong>コスト最適化：</strong> 少人数運営を可能にし、人件費を抑制。</li>
+      <li><strong>安全性強化：</strong> 未成年者管理とデータログで行政対応がスムーズ。</li>
+      <li><strong>経営分析：</strong> 利用データを可視化し、繁忙時間・人気席の分析に活用。</li>
+    </ul>
   </section>
+</main>
 
-  <!-- お客様の声（ダイジェスト） -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">導入後のお客様の声</h2>
-      <div class="card quote">
-        <p class="quote-text">「導入してから管理が楽になり、業務効率が飛躍的に上がりました」</p>
-        <p class="quote-text">「会員さんも残高確認が簡単で喜ばれています」</p>
-      </div>
-  </section>
-  <footer>© 2025 EsportsTECH</footer>
-  <script src="assets/theme.js"></script>
-</body>
-</html>
+<footer class="site-footer">
+  <div class="container small">© ESports TECH</div>
+</footer>
+</body></html>

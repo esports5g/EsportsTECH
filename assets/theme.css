@@ -17,7 +17,7 @@ nav a.active::after,nav a:hover::after{content:"";position:absolute;left:0;right
 .dropdown-menu a:hover{background:#f1f5f9;}
 
 /* Full-bleed hero */
-.hero-full{position:relative;min-height:72vh;display:grid;place-items:center;isolation:isolate;background:url('assets/img/hero.jpg') center/cover no-repeat;}
+.hero-full{position:relative;min-height:72vh;display:grid;place-items:center;isolation:isolate;background:url('hero_global_fullres.png') center/cover no-repeat;}
 .hero-full::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(2,6,23,.25) 0%, rgba(2,6,23,.55) 60%, rgba(2,6,23,.65) 100%);z-index:-1;}
 .hero-full .headline-wrap{width:min(1200px,92%);margin:0 auto;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:24px;}
 .hero-full h1.headline{font-size:clamp(46px,8vw,120px);line-height:.92;font-weight:900;letter-spacing:.04em;color:#ecf1f8;text-transform:uppercase;text-shadow:0 6px 28px rgba(0,0,0,.35);margin:0;}
@@ -606,3 +606,759 @@ button.btn, .btn{
 
 /* 修复部分安卓 WebView 垂直滚动卡顿 */
 *{ -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+/* === added by assistant: philosophy block styling === */
+.philosophy-block{
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  background: #f7f8fa;
+  border-radius: 12px;
+  line-height: 1.9;
+}
+.philosophy-block h2{
+  margin: 0 0 1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+.philosophy-block p{ margin: .8rem 0; }
+
+
+/* === assistant: Unified HERO sizing (site-wide) === */
+:root{
+  --hero-height-desktop: clamp(520px, 60vh, 760px);
+  --hero-height-mobile: clamp(300px, 40vh, 520px);
+  --hero-height: var(--hero-height-desktop);
+}
+@media (max-width: 768px){
+  :root{ --hero-height: var(--hero-height-mobile); }
+}
+
+/* Select common hero containers by id/class keywords */
+.hero, .Hero, [class*="hero"], [id*="hero"],
+.main-visual, .MainVisual, [class*="main-visual"], [class*="mainvisual"], [id*="main-visual"], [id*="mainvisual"],
+.kv, .mv, [class*="kv"], [class*="mv"], [id*="kv"], [id*="mv"],
+.top-visual, [class*="top-visual"], [id*="top-visual"],
+.first-view, [class*="first-view"], [class*="fv"], [id*="first-view"], [id*="fv"],
+.header-hero, [class*="header-hero"], [id*="header-hero"]{
+  position: relative;
+  min-height: var(--hero-height);
+  height: var(--hero-height);
+  overflow: hidden;
+}
+
+/* Unify background-based hero */
+.hero, .Hero, [class*="hero"], [id*="hero"],
+.main-visual, [class*="main-visual"], [class*="mainvisual"], [id*="main-visual"], [id*="mainvisual"],
+.kv, .mv, [class*="kv"], [class*="mv"], [id*="kv"], [id*="mv"],
+.top-visual, [class*="top-visual"], [id*="top-visual"],
+.first-view, [class*="first-view"], [class*="fv"], [id*="first-view"], [id*="fv"],
+.header-hero, [class*="header-hero"], [id*="header-hero"]{
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Unify <img>/<picture> based hero */
+.hero img, [class*="hero"] img,
+.main-visual img, [class*="main-visual"] img, [class*="mainvisual"] img,
+.kv img, .mv img, [class*="kv"] img, [class*="mv"] img,
+.top-visual img, [class*="top-visual"] img,
+.first-view img, [class*="first-view"] img, [class*="fv"] img,
+.header-hero img, [class*="header-hero"] img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block;
+}
+
+/* Prevent nested content from changing hero height */
+.hero > *:not(img):not(picture), [class*="hero"] > *:not(img):not(picture){
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* === assistant: header logo sizing (hi-res) === */
+.site-logo img, .logo img, img.header-logo, img[alt*="ロゴ" i], img[alt*="logo" i]{
+  height: 72px !important;   /* desktop size */
+  width: auto !important;
+  image-rendering: auto;
+}
+@media (max-width: 768px){
+  .site-logo img, .logo img, img.header-logo, img[alt*="ロゴ" i], img[alt*="logo" i]{
+    height: 56px !important; /* mobile size */
+  }
+}
+/* hide residual text title near logo if any */
+.site-title, .logo-text { display: none !important; }
+
+
+
+/* === Hero typographic redesign (High-end / Tech) === */
+.hero-full h1.headline {
+  font-family: "Space Grotesk","Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  letter-spacing: .02em;
+  line-height: .88;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: clamp(58px, 10vw, 144px);
+  background: linear-gradient(180deg, #ffffff 0%, #cfe3ff 60%, #9cb8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 10px 30px rgba(15, 23, 42, .25));
+}
+
+.hero-full .right {
+  justify-self: end;
+  max-width: 560px;
+  background: rgba(2, 6, 23, .40);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  padding: 22px 26px;
+  box-shadow: 0 10px 30px rgba(2,6,23,.35);
+}
+
+.hero-full .lead {
+  font-family: "Noto Sans JP","Yu Gothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-weight: 700;
+  letter-spacing: .01em;
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.9;
+  color: #e9f0fb;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+
+/* Spacing tuning */
+.hero-full .headline-wrap {
+  gap: 32px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 860px) {
+  .hero-full .right {
+    background: rgba(2,6,23,.55);
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 8px 22px rgba(2,6,23,.35);
+  }
+  .hero-full h1.headline {
+    font-size: clamp(44px, 12vw, 84px);
+    line-height: .95;
+  }
+}
+
+
+/* === Hero vertical stack (title over subtitle) === */
+.hero-full .headline-wrap { 
+  grid-template-columns: 1fr !important; 
+  align-items: start; 
+  justify-items: start;
+  gap: 28px;
+}
+.hero-full .right { 
+  justify-self: start !important; 
+  max-width: 720px; 
+  margin-top: 4px;
+}
+@media (min-width: 1024px){
+  .hero-full { min-height: 78vh; }
+}
+
+
+/* === Remove hero subtitle card === */
+.hero-full .right{
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.hero-full .lead{ margin: 0 !important; }
+
+
+/* === About page: unified block design (no cards) === */
+.unit{ 
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0;
+}
+/* Stack layout to space blocks consistently */
+.stack{ 
+  display: grid; 
+  gap: 28px; 
+}
+.stack .unit{ 
+  padding-top: 18px !important; 
+  border-top: 1px solid var(--line) !important; 
+}
+.stack .unit:first-child{ border-top: 0 !important; padding-top: 0 !important; }
+
+/* Company overview grid */
+.company-grid{
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 24px;
+}
+.company-table{
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 10px 18px;
+  margin: 0;
+}
+.company-table dt{
+  color: var(--muted);
+  font-weight: 800;
+}
+.company-table dd{ margin: 0; }
+
+.company-map .map-wrap{ 
+  border-radius: 12px; 
+  overflow: hidden; 
+  box-shadow: 0 10px 28px rgba(2,6,23,.25);
+}
+.company-map .card-title{ 
+  font-weight: 900; 
+}
+.meta.center{ text-align:center; }
+
+/* Vision section typography */
+#ビジョン, .vision, .vision-block{}
+#ビジョン .unit h3, .vision .unit h3, .vision-block .unit h3{
+  font-weight: 900; 
+  margin: 0 0 6px;
+}
+#ビジョン .unit p, .vision .unit p, .vision-block .unit p{ 
+  color: var(--muted); 
+  margin: 0; 
+  line-height: 1.9; 
+}
+
+/* Responsive */
+@media (max-width: 920px){
+  .company-grid{ grid-template-columns: 1fr; }
+  .company-table{ grid-template-columns: 120px 1fr; }
+}
+
+/* Exec message typography */
+.exec-message .exec-lead{font-weight:900;font-size:22px;margin:0 0 12px;}
+.exec-message .exec-body{color:var(--ink);opacity:.95;line-height:1.95;margin:10px 0;}
+.exec-message .exec-sign{display:flex;align-items:center;gap:12px;margin-top:18px;}
+.exec-message .exec-sign .bar{display:inline-block;width:40px;height:2px;background:var(--accent);}
+.exec-message .name{font-weight:900;}
+.exec-message .role{color:var(--muted);font-weight:700;}
+
+/* === Center all section titles consistently === */
+.section-title{ 
+  text-align: center; 
+  margin: 0 0 18px;
+}
+
+/* === Unified section rhythm === */
+.section{ padding: 50px 0; }
+.section .container{ max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+.section-title{ text-align:center; margin: 0 0 20px; }
+/* Paragraph defaults inside sections */
+.section p{ margin: 10px 0; line-height: 1.9; color: var(--ink); }
+/* Philosophy block resets */
+.philosophy-block p{ margin: 10px 0; }
+
+/* === Force left alignment for content blocks (About page) === */
+.section .container{ text-align: left; }
+.section .container > *:not(.section-title){ text-align: left; }
+.philosophy-block, .company-card, .exec-message, .vision, .vision-block, #ビジョン{ text-align: left; }
+/* override any 'center' utility that slipped into these blocks */
+.section .container .center, .company-card .center, .vision .center{ text-align: left !important; }
+.card-title.center, .meta.center{ text-align: left !important; }
+
+/* === Hard override: force left alignment for all content inside the four sections === */
+.philosophy-block, .philosophy-block *,
+.company-card, .company-card *,
+.exec-message, .exec-message *,
+#ビジョン, #ビジョン *, .vision, .vision *{
+  text-align: left !important;
+}
+/* Vision cards heading fix */
+#ビジョン .unit h3, .vision .unit h3{ text-align: left !important; }
+/* Remove any residual center classes */
+.center{ text-align: left !important; }
+
+/* === Final override: make 企業理念 use full container (no centered box) === */
+.philosophy-block{
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* === Titles: left align globally + full-width underline === */
+.section-title{
+  text-align: left !important;
+  margin: 0 0 16px !important;
+  position: relative;
+}
+.section-title::after{
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: var(--line);
+  margin-top: 12px;
+}
+/* If pages used a separate hr line under titles, ensure full width & left alignment */
+.sep-line{
+  width: 100% !important;
+  margin: 16px 0 !important;
+}
+
+/* === Hero heading clipping fix (all pages) === */
+.hero-full, .page-hero, .hero-full .headline-wrap{ overflow: visible !important; }
+.hero-full h1.headline,
+.page-hero h1{
+  line-height: 1.06 !important;
+  padding-bottom: .18em !important;
+  display: inline-block !important;
+  margin: 0 !important;
+}
+@media (max-width: 768px){
+  .hero-full h1.headline, .page-hero h1{ line-height: 1.08 !important; padding-bottom: .22em !important; }
+}
+
+/* Contact page intro */
+.contact-intro{
+  margin: 6px 0 18px;
+  padding: 12px 14px;
+  background: rgba(2,6,23,.02);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.contact-intro p{ margin: 6px 0; line-height: 1.8; }
+.contact-intro a{ font-weight: 800; }
+
+/* Contact intro inside card tweaks */
+.card .contact-intro{
+  margin: 0 0 10px;
+  padding: 10px 12px;
+  background: rgba(2,6,23,.02);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+/* Remove border/background for contact intro inside card */
+.card .contact-intro{
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 0 12px !important;
+}
+
+/* Contact: enhanced grid layout */
+.form-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+}
+.field{ display:flex; flex-direction: column; gap: 6px; }
+.field.full{ grid-column: 1 / -1; }
+.field.sm{ max-width: 260px; }
+.field.agree{ align-items: flex-start; }
+.field label{ font-weight: 700; }
+.field .req{ color: #ef4444; font-weight: 800; }
+/* replaced by a narrower selector */
+/* .field input, .field textarea, .field select{ */
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+.field textarea{ resize: vertical; }
+.actions{ grid-column: 1 / -1; margin-top: 6px; }
+.ck{ display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.ck a{ text-decoration: underline; }
+
+@media (max-width: 880px){
+  .form-grid{ grid-template-columns: 1fr; }
+  .field.sm{ max-width: none; }
+}
+
+
+/* Fix: do not style checkboxes/radios like text inputs */
+.field input:not([type="checkbox"]):not([type="radio"]), .field textarea, .field select{
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+/* Reset default broad rule if exists */
+.field input[type="checkbox"], .field input[type="radio"]{
+  width: auto;
+  height: auto;
+  margin: 0;
+  accent-color: var(--accent, #2563eb);
+}
+.ck{ display: inline-flex; align-items: center; gap: 10px; line-height: 1.7; }
+.ck .req{ margin-left: 4px; }
+
+/* Case cards: pin CTA to bottom and unify size */
+.case-card{ display:flex; flex-direction: column; }
+.case-card .body{ display:flex; flex-direction: column; flex:1; }
+.case-card .body .more-btn{
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 10px;
+}
+
+/* === Cases: CTA absolute bottom; points heading aligned across cards === */
+.case-card{ position: relative; }
+.case-card .body{ position: relative; padding-bottom: 72px; display:flex; flex-direction:column; min-height: 460px; }
+.case-card .body .more-btn{
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 46px;
+  border-radius: 12px;
+  padding: 0 18px;
+}
+.case-card .body .points-head{ margin-top: auto; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
+
+/* Hide sep-line */
+.sep-line{ display:none !important; }
+
+/* About page: hide extra divider under ビジョン right column */
+body[data-page="about"] .container hr,
+body[data-page="about"] .container .sep-line{
+  display: none !important;
+}
+
+/* === Brand logo bigger & transparent === */
+.site-brand img{ height:64px; width:auto; display:block; }
+@media (max-width: 960px){ .site-brand img{ height:48px; } }
+.logo-wrap, .site-brand, header .logo-wrap{ background:transparent !important; box-shadow:none !important; border:0 !important; padding:0 !important; }
+
+/* === Logo bigger, graphic only, no white box (bundle) === */
+.site-brand, .logo-wrap, header .logo-wrap, header .site-brand,
+.navbar .site-brand, .navbar .logo-wrap, [class*="logo-wrap"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+header img[src*="logo"], header img[alt*="Esports"],
+.navbar img[src*="logo"], .site-brand img, .logo-wrap img {
+  height: 72px !important;
+  width: auto !important;
+  max-height: none !important;
+  display: block;
+}
+header .site-brand, header .logo, .navbar .site-brand, .navbar .logo {
+  display: block;
+  width: 260px;
+  height: 72px;
+  background-color: transparent !important;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+@media (max-width: 960px){
+  header img[src*="logo"], header img[alt*="Esports"],
+  .navbar img[src*="logo"], .site-brand img, .logo-wrap img {
+    height: 56px !important;
+  }
+  header .site-brand, header .logo, .navbar .site-brand, .navbar .logo {
+    height: 56px; width: 200px;
+  }
+}
+header .site-brand img, header .logo img, .navbar .site-brand img {
+  transform: none !important; opacity: 1 !important;
+}
+header .site-brand span, header .logo span { 
+  text-indent: -9999px; overflow: hidden; white-space: nowrap; 
+}
+
+
+/* === 全站：把 Logo 统一替换为文字（株式会社ＥＳＰＯＲＴＳ ＴＥＣＨ） === */
+/* 1) 清除容器背景/阴影/边框/内边距 */
+.site-brand, header .site-brand, .navbar .site-brand,
+.logo, header .logo, .navbar .logo, .logo-wrap, [class*="logo-wrap"]{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+/* 2) 隐藏图片 Logo（无论是 <img> 还是 background-image） */
+.site-brand img, header .logo img, .navbar .logo img,
+.site-brand [class*="img"], .logo-wrap img{
+  display: none !important;
+}
+.site-brand, header .logo, .navbar .logo{
+  background-image: none !important;
+}
+/* 3) 用伪元素输出品牌文字（全站统一文案） */
+.site-brand::after, header .logo::after, .navbar .logo::after{
+  content: "株式会社ＥＳＰＯＲＴＳ ＴＥＣＨ";
+  display: inline-block;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: .08em;
+  color: #0f172a;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+/* 4) 移动端字号稍微缩小 */
+@media (max-width: 960px){
+  .site-brand::after, header .logo::after, .navbar .logo::after{
+    font-size: 18px;
+  }
+}
+
+
+/* ===== Header/Nav: compact bar + IMAGE logo (B) ===== */
+:root{
+  --header-h: 64px;
+  --logo-h: 36px;        /* desktop */
+  --nav-font: 14px;
+  --nav-gap-x: 18px;
+}
+header, .header, .site-header, .navbar{
+  height: var(--header-h);
+  display: flex; align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  background:#fff;
+}
+.site-brand, header .site-brand, .navbar .site-brand,
+.logo, header .logo, .navbar .logo, .logo-wrap{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  display: flex; align-items: center;
+}
+/* 禁用文字Logo伪元素（若存在） */
+.site-brand::after, header .logo::after, .navbar .logo::after{
+  content: none !important;
+}
+/* 统一图片 Logo 尺寸 */
+.site-brand img, header .logo img, .navbar .logo img, .logo-wrap img{
+  display: block !important;
+  height: var(--logo-h) !important;
+  width: auto !important;
+  max-height: none !important;
+  object-fit: contain;
+  transform:none !important; opacity:1 !important; filter:none !important;
+}
+/* 菜单 */
+nav, .nav, .gnav, .menu, .main-nav{ display:flex; align-items:center; margin-left:auto; }
+nav a, .nav a, .gnav a, .menu a, .main-nav a{
+  font-size: var(--nav-font);
+  padding: 0 var(--nav-gap-x);
+  color:#0f172a; text-decoration:none;
+}
+nav a:hover{ color:#0b5cff; }
+@media (max-width: 960px){
+  :root{ --header-h:56px; --logo-h:28px; --nav-font:13px; --nav-gap-x:14px; }
+}
+
+/* ==== Services 3-up grid ==== */
+.svc-grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:24px; }
+.svc-card{ background:#fff; border:1px solid rgba(2,6,23,.06); border-radius:16px; padding:20px 20px 24px; box-shadow: 0 6px 18px rgba(2,6,23,.06); min-height: 220px; display:flex; flex-direction:column; }
+.svc-title{ font-size: 20px; font-weight:800; color:#0f172a; margin:4px 0 8px; line-height:1.25; }
+.svc-sub{ color:#475569; font-size:14px; margin:0 0 10px; }
+.svc-body{ color:#334155; font-size:14px;  }
+@media (max-width: 1080px){
+  .svc-grid{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px){
+  .svc-grid{ grid-template-columns:1fr; }
+  .svc-title{ font-size:18px; }
+}
+
+
+/* === Services icons === */
+.svc-card .svc-icon{
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(37,99,235,.10), rgba(14,165,233,.10));
+  color: #0b5cff;
+  margin-bottom: 10px;
+  box-shadow: inset 0 0 0 1px rgba(11,92,255,.10);
+}
+@media (prefers-color-scheme: dark){
+  .svc-card .svc-icon{ background: rgba(59,130,246,.15); color:#60a5fa; box-shadow: inset 0 0 0 1px rgba(96,165,250,.2); }
+}
+
+
+@media (min-width: 1081px){
+  .svc-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+
+/* === Services typography tidy === */
+.svc-card{ padding: 22px 22px 26px; }
+.svc-title{ margin: 2px 0 10px; letter-spacing: .01em; }
+.svc-sub{ margin: 0 0 14px; line-height: 1.8; letter-spacing: .02em; color:#475569; }
+.svc-body{ font-size: 15px; line-height: 1.9; letter-spacing: .02em; color:#334155; }
+.svc-body p{ margin: 0 0 10px; }
+.svc-body h4{ font-size: 14px; margin: 12px 0 6px; color:#0f172a; letter-spacing:.02em; }
+.svc-body ul{ margin: 0 0 10px 0; padding-left: 1.2em; list-style: disc; }
+.svc-body ul li{ margin: 4px 0; }
+.svc-icon{ margin-bottom: 12px !important; } /* a bit more breath */
+@media (max-width: 640px){
+  .svc-card{ padding: 18px 16px 22px; }
+  .svc-body{ font-size: 14.5px; line-height: 1.85; }
+}
+
+
+/* === Services spacing fix (remove big blank gap) === */
+.services .svc-card .svc-body{ margin-top: 0 !important; }
+.services .svc-sub{ margin-bottom: 8px !important; }
+
+
+/* === Services CTA button === */
+.svc-cta{ margin-top: 12px; }
+.svc-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width: 180px; height: 42px; padding: 0 18px;
+  border-radius: 12px; background: #0b5cff; color:#fff; text-decoration:none;
+  font-weight: 700; letter-spacing: .02em; box-shadow: 0 6px 14px rgba(11,92,255,.25);
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+.svc-btn:hover{ background:#0846d8; box-shadow: 0 8px 18px rgba(11,92,255,.32); transform: translateY(-1px); }
+.svc-btn:active{ transform: translateY(0); }
+
+
+/* === Services CTA pinned to card bottom & unified size === */
+.svc-card{ display:flex; flex-direction:column; }
+.svc-body{ flex: 1 1 auto; }
+.svc-cta{ margin-top: 14px; display:flex; }
+.svc-btn{
+  width: 220px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  background: #0b5cff;
+  color:#fff; text-decoration:none;
+  font-weight: 700; letter-spacing: .02em;
+  display:inline-flex; align-items:center; justify-content:center;
+  box-shadow: 0 6px 14px rgba(11,92,255,.25);
+}
+@media (max-width: 640px){
+  .svc-btn{ width: 100%; max-width: 240px; }
+}
+
+/* === unified hero component (earth) === */
+.hero { position: relative; min-height: 56vh; display: flex; align-items: center; overflow: hidden; }
+.hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(.65); z-index: 0; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2,6,23,.18), rgba(2,6,23,.5)); z-index: 1; }
+.hero__inner { position: relative; z-index: 2; padding: 96px 20px 80px; }
+.hero h1 { color: #fff; font-size: 56px; line-height: 1.12; letter-spacing: .02em; font-weight: 800; margin: 0 0 10px; }
+.hero__lead { color: #e6efff; max-width: 720px; font-size: 18px; line-height: 1.9; }
+.hero--earth .hero__bg { background-image: url('assets/hero_global_fullres.png'); }
+@media (max-width: 960px) {
+  .hero__inner { padding: 72px 20px 60px; }
+  .hero h1 { font-size: 40px; }
+  .hero__lead { font-size: 16px; }
+}
+
+/* === hero minimal patch for yaoqianshu === */
+.page-hero { position: relative; min-height: 56vh; display:flex; align-items:center; overflow:hidden; }
+.page-hero__bg { position:absolute; inset:0; background-image: url('assets/hero_global_fullres.png'); background-position:center; background-size:cover; filter:brightness(.68); z-index:0; }
+.page-hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,6,23,.15), rgba(2,6,23,.42)); z-index:1; pointer-events:none; }
+.page-hero__inner{ position:relative; z-index:2; padding:96px 20px 80px; }
+.page-hero__title{ margin:0; color:#fff; font-weight:800; letter-spacing:.02em; font-size:56px; line-height:1.12; text-shadow:0 2px 16px rgba(0,0,0,.22); }
+@media (max-width:960px){ .page-hero__inner{ padding:72px 20px 60px; } .page-hero__title{ font-size:40px; } }
+
+/* override bg path: use global fullres */
+.page-hero--earth .page-hero__bg { background-image: url('assets/hero_global_fullres.png') !important; }
+
+
+/* === HERO VISIBILITY OVERRIDE (yaoqianshu) === */
+.page-hero, .hero { position: relative; }
+.page-hero__inner, .hero__inner { position:relative; z-index:3; }
+.page-hero__title, .hero h1 {
+  color:#ffffff !important;
+  opacity:1 !important;
+  mix-blend-mode: normal !important;
+  filter:none !important;
+  text-shadow: 0 6px 24px rgba(0,0,0,.45), 0 2px 8px rgba(0,0,0,.35) !important;
+  font-weight:900;
+}
+/* Soften the overlay */
+.page-hero::after, .hero::after {
+  background: linear-gradient(180deg, rgba(2,6,23,.06), rgba(2,6,23,.28)) !important;
+}
+/* Make background slightly brighter */
+.page-hero__bg, .hero__bg {
+  filter: brightness(.9) contrast(1.04) !important;
+}
+
+/* === responsive universal tweaks === */
+/* Images and embeds scale */
+img, video, canvas, svg { max-width:100%; height:auto; }
+
+/* Cards/grid responsive: collapse to 1 column on small devices */
+@media (max-width: 1024px){
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+  .hero, .page-hero { min-height: 48vh; }
+}
+@media (max-width: 768px){
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; gap: 16px; }
+  .container { padding-left: 16px; padding-right: 16px; }
+  .hero__title, .page-hero__title, .hero h1 { font-size: 34px; }
+  .hero__inner, .page-hero__inner { padding: 60px 16px 48px; }
+  nav ul { flex-wrap: wrap; gap: 8px; }
+  .btn, button, .button { width: 100%; }
+}
+@media (min-width: 1200px){
+  .container--wide { max-width: 1240px; margin: 0 auto; }
+}
+
+/* ==== yaoqianshu：Hero 标题强制单行 ==== */
+.page-hero.hero-full .headline-wrap { 
+  overflow: hidden;
+}
+.page-hero.hero-full .headline {
+  white-space: nowrap;
+  line-height: 1.05;
+  letter-spacing: .02em;
+  font-weight: 800;
+  font-size: clamp(40px, 8vw, 120px);
+  text-shadow: 0 6px 24px rgba(0,0,0,.45), 0 2px 8px rgba(0,0,0,.35);
+}
+.page-hero.hero-full .headline br { 
+  display: none !important; 
+}
+@media (max-width: 768px){
+  .page-hero.hero-full .headline{
+    font-size: clamp(28px, 10vw, 64px);
+  }
+}
